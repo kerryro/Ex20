@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>Слои</title>
+    <style>
+
+        .first-layer {
+            background-color: rgb(0, 8, 255);
+            color: white; /*цвет шрифта*/
+            font-size: 30;
+            height: 100px;
+            width: 100px;
+            position: absolute;/*позиционирует слой абсолютно относительно родительского элемента, за счет чего возможно перемещение на слое*/
+            right: 300px;
+            top: 200px;
+
+        }
+
+        .second-layer {
+            background-color: rgb(251, 6, 6);
+            color: white;
+            font-size: 40;
+            height: 150px;
+            width: 150px;
+            position: absolute;
+            right: 500px;
+            top: 100px;
+        }
+
+        .image-layer {   
+            position: absolute;   
+            top: 90px;   
+            animation: move-image 10s linear infinite;/*задаем параметры анимации, move-image-название анимации, linear-тип кривой анимации(равномерная),infinite-кол-в повторений анимации */
+        }   
+
+        @keyframes move-image {/*правило CSS, которое определяет анимацию*/
+            from {
+                transform: translateX(-100%); /*начальное положение*/
+            }
+            to {/*конечное положение*/
+                transform: translateX(1000%);/*элемент будет расположен на 1000% своей ширины вправо*/
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first-layer">
+        Это дальше
+    </div>
+
+    <div class="image-layer">
+        <img src="Картинка.jpg" alt="Картинка" height="150" width="150"> 
+        </div>
+
+    <div class="second-layer">
+        Это ближе
+    </div>
+</body>
+
+</html>
